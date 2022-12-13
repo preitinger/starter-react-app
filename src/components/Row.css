@@ -1,0 +1,6 @@
+.row {
+  display: inline-flex;
+  flex-flow: row;
+  justify-content: center;
+  margin-right:13px;
+}

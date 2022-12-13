@@ -1,0 +1,80 @@
+.boardParent {
+  display:inline-block;
+  position:relative;
+  /* margin:10px; */
+  box-sizing: border-box;
+  /* max-height:600px; */
+  overflow: auto;
+  margin-top: 40px;
+  margin-left: 40px;
+  padding-right:20px;
+  padding-bottom:20px;
+
+  /* border:inset;
+  border-radius: 1em;
+  border-width: 0.6em; */
+  border: 2px solid black;
+  border-radius: 0.5em;
+
+
+
+  /* background-color: rgb(219, 196, 151); */
+   /* background: linear-gradient(hsl(212, 52%, 36%), hsl(56, 47%, 38%)); */
+   /* background: linear-gradient(hsl(52, 87%, 69%), hsl(0, 0%, 100%)); */
+   background: linear-gradient(hsl(0, 0%, 100%), hsl(52, 87%, 69%));
+
+
+  /* max-width:100%; */
+}
+
+
+.boardHourGlass {
+  display:block;
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  margin: auto;
+  visibility:hidden;
+  /* border:5px solid blue; */
+}
+
+.boardHourGlass-inner {
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin: auto;
+  width: auto;
+  height: auto;
+}
+
+.boardHourGlassVisible {
+  visibility:visible;
+  background-color: white;
+}
+
+.board {
+  margin:20px;
+  /* margin-left: 300px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right:0;
+  padding-bottom:0;
+  width:auto;
+}
+
+@keyframes congratulation {
+  0%   {transform:scale(0.3);}
+  100% {transform:scale(1);}
+}
+
+.congratulation {
+  margin: 20px;
+  text-align:center;
+  animation-name: congratulation;
+  animation-duration: 1s;
+}

@@ -1,0 +1,200 @@
+:root {
+  /* --initial-north-height: 80px;
+  --initial-south-height: 80px; */
+  --splitter-size: 10px;
+  --splitter-inner-size: 3px;
+  --min-item-size: 50px;
+  --splitter-background: #eee;
+  --splitter-foreground: #bbb;
+}
+
+/* Zunaechst wird Inhalt und Splitter in einer HSplitPane
+statisch positioniert als initiale Voreinstellung. Hierzu das Suffix "-default"
+Erst nach dem ersten Drag-Vorgang bei einem Splitter wird umgeschaltet
+auf absolute Positionierung. */
+
+.hsp-container {
+  box-sizing: border-box;
+  display: block;
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+.hsp-default {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  width:auto;
+  height:auto;
+}
+
+.hsp-item {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  top:0;
+  bottom:0;
+  /* left und right wird als inline-style gesetzt */
+  overflow:auto;
+}
+
+.hsp-default > .hsp-item {
+  position:static;
+  box-sizing: border-box;
+  /* display:inline-block; */
+  width:auto;
+  height:auto;
+  min-width: var(--min-item-size);
+}
+
+
+.hsp-splitter {
+  box-sizing: border-box;
+  position:absolute;
+  width: var(--splitter-size);
+  top:0;
+  bottom:0;
+  cursor: col-resize;
+  background: var(--splitter-background);
+  display:block;
+}
+
+.hsp-default > .hsp-splitter {
+  cursor:col-resize;
+  position:static;
+  box-sizing: border-box;
+  width: var(--splitter-size);
+  /* height:100%; */
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+/* Zunaechst wird Inhalt und Splitter in einer VSplitPane
+statisch positioniert als initiale Voreinstellung. Hierzu das Suffix "-default"
+Erst nach dem ersten Drag-Vorgang bei einem Splitter wird umgeschaltet
+auf absolute Positionierung. */
+
+.vsp-container {
+  box-sizing: border-box;
+  display: block;
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+.vsp-default {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  width:auto;
+  height:auto;
+}
+
+.vsp-item {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  left:0;
+  right:0;
+  /* left und right wird als inline-style gesetzt */
+  overflow:auto;
+  min-height:10px;
+}
+
+.vsp-default > .vsp-item {
+  position:static;
+  box-sizing: border-box;
+  /* display:inline-block; */
+  width:auto;
+  height:auto;
+  min-height: var(--min-item-size);
+}
+
+
+.vsp-splitter {
+  box-sizing: border-box;
+  position:absolute;
+  height: var(--splitter-size);
+  left:0;
+  right:0;
+  cursor: row-resize;
+  background: var(--splitter-background);
+  display:block;
+}
+
+.vsp-default > .vsp-splitter {
+  position:static;
+  box-sizing: border-box;
+  height: var(--splitter-size);
+  width:100%;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.hsp-splitter-outer {
+  box-sizing: border-box;
+  position:absolute;
+  width: var(--splitter-size);
+  top:0;
+  bottom:0;
+  cursor: col-resize;
+  background: var(--splitter-background);
+  display:block;
+
+  --padding-left: calc((var(--splitter-size) - var(--splitter-inner-size)) / 2);
+  --padding-right: calc(var(--splitter-size) - var(--splitter-inner-size) - var(--padding-left));
+  padding-left: var(--padding-left);
+  padding-right: var(--padding-right);
+}
+
+.hsp-default > .hsp-splitter-outer {
+  cursor:col-resize;
+  position:static;
+  box-sizing: border-box;
+  width: var(--splitter-size);
+  /* height:100%; */
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.hsp-splitter-inner {
+  box-sizing: border-box;
+  width: var(--splitter-inner-size);
+  border-left:1px solid var(--splitter-foreground);
+  border-right:1px solid var(--splitter-foreground);
+  height: 100%;
+}
+
+.vsp-splitter-outer {
+  box-sizing: border-box;
+  position:absolute;
+  height: var(--splitter-size);
+  left:0;
+  right:0;
+  cursor: row-resize;
+  background: var(--splitter-background);
+  display:block;
+
+  --padding-top: calc((var(--splitter-size) - var(--splitter-inner-size)) / 2);
+  --padding-bottom: calc(var(--splitter-size) - var(--splitter-inner-size) - var(--padding-bottom));
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+}
+
+.vsp-default > .vsp-splitter-outer {
+  cursor:col-resize;
+  position:static;
+  box-sizing: border-box;
+  height: var(--splitter-size);
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.vsp-splitter-inner {
+  box-sizing: border-box;
+  height: var(--splitter-inner-size);
+  border-top:1px solid var(--splitter-foreground);
+  border-bottom:1px solid var(--splitter-foreground);
+  width: 100%;
+}

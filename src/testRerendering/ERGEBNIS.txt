@@ -1,0 +1,4 @@
+Das Ergebnis dieses Tests ist:
+
+wenn sich der Zustand in einer Komponente aendert, wird immer stur das render() der komponente aufgerufen und
+danach jeweils die render()-Funktionen der enthaltenen Subkomponenten.

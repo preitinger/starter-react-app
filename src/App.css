@@ -1,38 +1,223 @@
-.App {
-  text-align: center;
+
+.oben {
+  box-sizing: border-box;
+  margin-left:3vh;
+  margin-top:3vh;
+  margin-bottom:10px;
+  margin-right:0;
+  display:flex;
+  align-items: baseline;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.oben-0 {
+  margin-left: 3vh;
+  width: 400px;
+  box-sizing:border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.oben-0 h1 {
+  text-shadow: 2px 7px 5px rgba(0,0,0,0.3),
+    0px -4px 10px rgba(255,255,255,0.3);
+  margin:0;
+  padding:0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.oben-1 {
+  padding-left:50px;
+}
+
+.lightLabel {
+  display: inline-block;
+  width:1em;
+  font-size: small;
+  color:black;
+}
+
+.sidePanel {
+  margin:20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-flow: column;
+  border:1px solid black;
+  border-radius: 1em;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  background: linear-gradient(hsl(0, 0%, 100%), hsl(228, 100%, 84%));
+  color:black;
+  width: calc(100% - 20px - 20px);
 }
 
-.App-link {
-  color: #61dafb;
+.delayed * {
+  cursor:wait;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sideItem {
+  display: flex;
+  flex-flow: column;
+  margin-top:20px;
+  margin-left:20px;
+  margin-right:20px;
+  margin-bottom:0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.sideItem ul {
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+
+.sideItem label {
+}
+
+.sideItem .input {
+}
+
+.sideItem td {
+  padding:0.4em;
+}
+
+.sideItem input[type="number"] {
+  width:60px;
+}
+
+.inputContainer {
+  display: inline-block;
+  border: 1px solid red;
+}
+
+.sideButton {
+  margin-left:0;
+  margin-bottom:10px;
+  border: 2px solid black;
+  border-radius: 0.5em;
+  padding: 0.25em;
+  color:black;
+  cursor: pointer;
+}
+
+.sideButton:hover {
+  text-decoration: underline;
+}
+.sideButton:active {
+  background-color: Window;
+}
+
+.sideItem-minified .sideButton {
+  margin:0;
+  padding:0;
+  border:none;
+  background:inherit;
+  height:1.5em;
+}
+
+.sideItem-minified .sideButton:hover {
+  text-decoration: underline;
+}
+.sideItem-minified .sideButton:active {
+}
+
+.invisible {
+  visibility: hidden;
+  height:0;
+}
+
+.segSize {
+  display: block;
+  font-size: small;
+  color: black;
+  text-align: right;
+  margin-top:2px;
+  margin-right:5px;
+  width:13px;
+  height:13px;
+  align-self: center;
+}
+
+.segSize .invisible {
+  visibility: hidden;
+}
+
+.buttonRow {
+  margin-left:20px;
+  margin-top:20px;
+  margin-right:0;
+  margin-bottom:0;
+  padding-right:20px;
+}
+
+.rules {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.5em;
+}
+
+.sideItem fieldset {
+  margin:1em;
+  padding:0.5em;
+  border:1px solid gray;
+  border-radius:0.5em;
+}
+
+.sideItem fieldset > * {
+  margin: 0.5em;
+}
+
+.commentation {
+  margin:20px;
+  height:140px;
+  /* min-height:50px; */
+  width:auto;
+}
+.lightHint {
+  color:gray;
+  font-size:smaller;
+}
+
+
+/******************************************/
+
+body, #root {
+  margin:0;
+}
+
+#root {
+  box-sizing: border-box;
+  position:relative;
+  width:100vw;
+  height:100vh;
+  display:block;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  height: 100vh;
+   width: 100vw;
+   /* background: #333; */
+   border: 6px solid #666;
+   display: flex;
+ }
+.left {
+  box-sizing: border-box;
+
+}
+.right {
+  box-sizing: border-box;
+  position: relative;
+  padding-left:10px;
+}
+.splitter {
+  box-sizing: border-box;
+  position:absolute;
+  width:10px;
+  height:100%;
+  top:0;
+  left:0;
+  cursor: col-resize;
+  background: #666;
+}
+
+#preWinner {
+  margin-left:20px;
+  margin-right: 20px;
 }

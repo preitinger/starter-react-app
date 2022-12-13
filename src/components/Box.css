@@ -1,0 +1,27 @@
+@import url("../utils/Checkbox.css");
+
+
+.boxContainer {
+  display:inline-block;
+  margin:3px;
+}
+
+.board input[type="checkbox"] {
+  --edge-len: 30px;
+  width: var(--edge-len);
+  height: var(--edge-len);
+}
+
+.board input[type="checkbox"]::before {
+  content: "";
+  width: var(--edge-len);
+  height: var(--edge-len);
+  background-size: var(--edge-len);
+}
+
+.allowed input[type="checkbox"] {
+  cursor:pointer;
+}
+.not-allowed input[type="checkbox"] {
+  cursor:not-allowed;
+}
